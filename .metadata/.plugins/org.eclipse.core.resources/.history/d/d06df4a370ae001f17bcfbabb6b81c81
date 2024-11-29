@@ -1,0 +1,6 @@
+package com.librarymanagement.pojo;
+
+public class Login {
+	private String userNamre;
+	private String password;
+}

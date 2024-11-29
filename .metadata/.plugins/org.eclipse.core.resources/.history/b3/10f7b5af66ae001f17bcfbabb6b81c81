@@ -1,0 +1,20 @@
+package com.librarymanagement.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.librarymanagement.dao.UserDao;
+import com.librarymanagement.pojo.User;
+
+import jakarta.transaction.Transactional;
+
+@Service
+@Transactional
+public class UserService implements IUserService {
+	
+	
+	
+
+
+}

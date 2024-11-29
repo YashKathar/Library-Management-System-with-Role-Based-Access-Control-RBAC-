@@ -1,0 +1,27 @@
+package com.librarymanagement.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.librarymanagement.dao.UserDao;
+import com.librarymanagement.pojo.User;
+
+import jakarta.transaction.Transactional;
+
+@Service
+@Transactional
+public class UserService implements IUserService {
+	@Autowired
+	private UserDao userDao;
+	@Override
+	public User addUser(User user) {
+		// TODO Auto-generated method stub
+		return userDao.save(user);
+	}
+	
+	
+	
+
+
+}

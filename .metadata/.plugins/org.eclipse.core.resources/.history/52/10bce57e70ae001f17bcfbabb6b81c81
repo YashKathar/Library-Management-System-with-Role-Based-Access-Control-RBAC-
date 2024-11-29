@@ -1,0 +1,5 @@
+package com.librarymanagement.dto;
+
+public class UserDto {
+
+}

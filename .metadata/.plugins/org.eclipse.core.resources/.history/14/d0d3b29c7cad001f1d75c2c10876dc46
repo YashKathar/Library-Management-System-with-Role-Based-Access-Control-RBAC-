@@ -1,0 +1,9 @@
+package com.librarymanagement.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.librarymanagement.pojo.User;
+
+public interface UserDao extends JpaRepository<User, Long> {
+
+}

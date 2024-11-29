@@ -1,0 +1,8 @@
+package com.librarymanagement.service;
+
+import com.librarymanagement.pojo.User;
+
+public interface IUserService {
+	 User register(User user);
+	 User findByEmail(String email);
+}

@@ -1,0 +1,11 @@
+package com.librarymanagement.service;
+
+import org.springframework.http.ResponseEntity;
+
+import com.librarymanagement.pojo.User;
+
+public interface IUserService {
+
+	User addUser(User user);
+	
+}

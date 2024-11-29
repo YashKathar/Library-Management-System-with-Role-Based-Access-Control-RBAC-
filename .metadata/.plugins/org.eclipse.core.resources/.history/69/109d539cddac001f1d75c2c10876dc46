@@ -1,0 +1,22 @@
+package com.librarymanagement.service;
+
+import org.springframework.stereotype.Service;
+
+import com.librarymanagement.pojo.Book;
+
+@Service
+public class BookService implements IBookService {
+
+	@Override
+	public Book addBook(Book book) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Book getBook(Long bookId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
