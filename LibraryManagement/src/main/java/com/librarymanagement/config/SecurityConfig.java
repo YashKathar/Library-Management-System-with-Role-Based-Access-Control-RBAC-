@@ -17,7 +17,9 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.librarymanagement.filter.JwtFilter;
 import com.librarymanagement.service.CustomUserDetailsService;
 
 @Configuration
@@ -27,6 +29,9 @@ public class SecurityConfig{
 	@Autowired
 	private CustomUserDetailsService userDetailsService;
 	
+	@Autowired
+	private JwtFilter jwtFilter;
+	
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf(Customizer -> Customizer.disable()); // to disabled the csrf
@@ -35,7 +40,7 @@ public class SecurityConfig{
 //		httpSecurity.formLogin(Customizer.withDefaults()); // this is for to enabled the form for the browser
 		httpSecurity.httpBasic(Customizer.withDefaults()); // this is for the to enabled the postman form login
 		httpSecurity.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); 
-		
+		httpSecurity.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 		return httpSecurity.build();
 	}
 	
